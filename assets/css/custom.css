@@ -1,0 +1,37 @@
+body {
+    font-family: "Lato", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+
+.bg-image {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        #7ed56f6b,
+         #28b48550), 
+         url(../images/bg.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+}
+
+.crystal-picture {
+    width: 100px;
+}
+
+.red-crystal {
+    margin-top: 5px;
+    width: 120px;
+}
+
+.nudgeRight {
+    margin-left: 25px;
+    font-size: 12px;
+}
+
+#makeSmaller {
+    font-size: 2.7vh;
+}
