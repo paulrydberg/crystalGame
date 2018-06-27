@@ -1,5 +1,22 @@
 $(document).ready(function() {
 
+  var winningSound = new Audio("win.mp3");
+  var losingSound = new Audio("lose.mp3");
+  var backgroundMusic = new Audio("song.mp3");
+
+  setTimeout(playSong, 1 * 1);
+  function playSong() {
+    backgroundMusic.play();
+  }
+
+  function winSound() {
+    winningSound.play();
+  }
+
+  function loseSound() {
+    losingSound.play();
+  }
+
 var matchNumberJS = 0;
 var winsJS = 0;
 var lossesJS = 0;
@@ -8,6 +25,7 @@ var blueGemJS = 0;
 var greenGemJS = 0;
 var purpleGemJS = 0;
 var redGemJS = 0;
+
 
 
 
@@ -26,6 +44,8 @@ var redGemJS = 0;
 
     $("#totalScore").append(totalScoreJS);
     console.log("Total score initially set to zero. " + "Value: " + totalScoreJS);
+
+    
 
   }
 
@@ -103,7 +123,12 @@ redGemNumberSet = parseInt(redGemNumberSet);
       $("#wins").empty();
       $("#wins").append(winsJS);
 
+      setTimeout(winSound, 1 * 1);
+
       setTimeout(newGame, 1 * 1);
+      
+
+
     }
   
     else if (totalScoreJS > matchNumberJS) {
@@ -117,14 +142,60 @@ redGemNumberSet = parseInt(redGemNumberSet);
       $("#losses").empty();
       $("#losses").append(lossesJS);
 
+      setTimeout(loseSound, 1 * 1);
+
       setTimeout(newGame, 1 * 1);
+
+
     }
 
     
 
   }
 
+
+  function newGame() {
+    $("#totalScore").empty();
+    totalScoreJS = 0;
+    $("#totalScore").append(totalScoreJS);
+
+    $("#matchNumber").empty();
+    matchNumberJS = Math.floor(Math.random() * 101) + 19;
+    $("#matchNumber").append(matchNumberJS);
+
+    blueGemNumber = "";
+    blueRandom = Math.floor(Math.random() * 12) + 1;
+    greenGemNumber = "";
+    greenRandom = Math.floor(Math.random() * 12) + 1;
+    purpleGemNumber = "";
+    purpleRandom = Math.floor(Math.random() * 12) + 1;
+    redGemNumber = "";
+    redRandom = Math.floor(Math.random() * 12) + 1;
+    
+    blueGemNumberSet = blueRandom + blueGemNumber;
+    greenGemNumberSet = greenRandom + greenGemNumber;
+    purpleGemNumberSet = purpleRandom + purpleGemNumber;
+    redGemNumberSet = redRandom + redGemNumber;
+
+    blueGemNumberSet = parseInt(blueGemNumberSet);
+    greenGemNumberSet = parseInt(greenGemNumberSet);
+    purpleGemNumberSet = parseInt(purpleGemNumberSet);
+    redGemNumberSet = parseInt(redGemNumberSet);
+    
+
+    
+
+  }
+
   
+
+
+
+  
+
+
+});
+
 
   // function newGame() {
 
@@ -146,12 +217,7 @@ redGemNumberSet = parseInt(redGemNumberSet);
 
   // }
 
-
-  
-
-
-});
-
+  //-----------------------------------------------------------------------------------------------
 
 // Pseudo Code
 
